@@ -42,9 +42,9 @@ class InventoryManager:
     
     def create_new_product(self):
         product_id = self.check_if_number("Enter Product ID (only number): ")
-        
-        product_id = str(product_id)
-        if product_id in self.inventory:
+
+        p_id = str(product_id)
+        if p_id in self.inventory:
             print("--> Product already exists!")
         else:
             name = input("Enter Product Name: ")
@@ -55,10 +55,10 @@ class InventoryManager:
     
     def add_product_qty(self):
         product_id = self.check_if_number("Enter Product ID: ")
-        product_id = str(product_id)
-        if product_id in self.inventory:
+        p_id = str(product_id)
+        if p_id in self.inventory:
             quantity = self.check_if_number("Enter Quantity to Add: ")
-            self.inventory[product_id].quantity += quantity
+            self.inventory[p_id].quantity += quantity
             self.save_inventory()
             print("--> Stock updated successfully!")
         else:
@@ -66,12 +66,12 @@ class InventoryManager:
     
     def reduce_product_qty(self):
         product_id = self.check_if_number("Enter Product ID: ")
-        product_id = str(product_id)
+        p_id = str(product_id)
 
-        if product_id in self.inventory:
+        if p_id in self.inventory:
             quantity = self.check_if_number("Enter Quantity to Reduce: ")
-            if self.inventory[product_id].quantity >= quantity:
-                self.inventory[product_id].quantity -= quantity
+            if self.inventory[p_id].quantity >= quantity:
+                self.inventory[p_id].quantity -= quantity
                 self.save_inventory()
                 print("--> Stock reduced successfully!")
             else:
@@ -81,10 +81,10 @@ class InventoryManager:
     
     def check_product_stock(self):
         product_id = self.check_if_number("Enter Product ID: ")
-        product_id = str(product_id)
+        p_id = str(product_id)
         
-        if product_id in self.inventory:
-            product = self.inventory[product_id]
+        if p_id in self.inventory:
+            product = self.inventory[p_id]
             print(f"--> Product: {product.name}, Quantity: {product.quantity}")
         else:
             print("--> Product not found!")
@@ -99,7 +99,7 @@ class InventoryManager:
     
     def menu(self):
         while True:
-            print("\n:: Inventory Management System ::")
+            print("\n:: INVENTORY MANAGEMENT SYSTEM ::")
             print(" ")
             print("* To continue, please choose from menus *")
             print(" ")

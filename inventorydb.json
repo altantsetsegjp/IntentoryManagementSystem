@@ -2,6 +2,21 @@
     "1": {
         "product_id": "1",
         "name": "apple ",
-        "quantity": 18
+        "quantity": 22
+    },
+    "2": {
+        "product_id": 2,
+        "name": "banana",
+        "quantity": 43
+    },
+    "3": {
+        "product_id": 3,
+        "name": "lemon",
+        "quantity": 20
+    },
+    "4": {
+        "product_id": 4,
+        "name": "orange",
+        "quantity": 10
     }
 }
